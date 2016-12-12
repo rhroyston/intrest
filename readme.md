@@ -3,7 +3,7 @@
 
 Manage and configure a Cisco networking device using a pleasing Material Design Lite browser based GUI.
 
-:construction: **This project is currently being developed and not yet in beta.  Please check back soon!**
+:construction: **This project is currently being developed.  It is not yet in beta.  Please check back soon!**
 
 ## Code Example
 
