@@ -1,0 +1,216 @@
+/*
+ intRest - Browser Based Management via RESTful API's
+ (c) 2016, Ron Royston, MIT License
+ https://rack.pub
+*/
+html body {
+  font-family: 'Roboto', sans-serif;
+  background: #f5f5f5;
+}
+
+label {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #616161;
+  font-size: 1.2em;
+}
+
+#intro{
+  
+}
+
+#device{
+  
+}
+
+.drawer-separator {
+  height: 1px;
+  background-color: #dcdcdc;
+  margin: 8px 0;
+}
+
+.social-icon {
+  position: absolute;
+  height: 36px;
+  left: 1px;
+  opacity: .3;
+}
+
+.bold{
+  font-weight: 500;
+}
+
+.oauth-login-button {
+  width: 148px;
+  margin: 12px;
+}
+
+.license {
+  font-size: .6em;
+}
+.opacity4 {
+  opacity: .4;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.oin {
+  color: #424242;
+  font-size: .8em;
+  vertical-align: 15%;
+}
+
+.text-left{
+  text-align:left;
+}
+.mdl-card {
+  width: 512px;
+}
+
+.mdl-card__supporting-text{
+  color:#757575;
+}
+
+.mdl-card__menu {
+  color: #fff;
+}
+
+.mdl-layout__drawer-button {
+  color: #757575 !important;
+}
+
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  color: white;
+}
+
+.mdl-layout__content {
+  flex: 1 0 auto;
+}
+
+.mdl-card__actions {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.mdl-card__actions > .mdl-button--icon {
+  margin-right: 3px;
+  margin-left: 3px;
+}
+
+.mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('/intrest/images/md-grey.jpg') center / cover;
+}
+
+.login-card > .mdl-card__title {
+  background: url('/firebase-auth/images/sun.png') center / cover;
+}
+
+#help-card > .mdl-card__title {
+  background: url('/firebase-auth/images/help.jpg') center / cover;
+}
+
+.top-title {
+  position:absolute;
+  top:-24px;
+  left:12px;
+}
+
+.thin{
+  font-weight:100;
+}
+.light{
+  font-weight:300;
+}
+
+#account-menu-button {
+  text-transform: capitalize;
+  display:none;
+}
+
+#sign-in-button {
+  display:none;
+}
+
+#chip:hover {
+  cursor: pointer;
+}
+
+#login-card {
+  display: none;
+}
+#register-card {
+  display: none;
+}
+#notice-card {
+  display: none;
+}
+#logout-card {
+  display: none;
+}
+#secure-card {
+  display: none;
+}
+#pwd-users-only-div{
+  display:none;
+}
+#verify-password-div{
+  display:none;
+}
+
+.docs-toc ul {
+    border-left: solid 3px #424242;
+    padding-left: 20px;
+    line-height: 28px
+}
+
+.quote{
+  border-left: solid 3px #e0e0e0;
+  margin-left:64px;
+  margin-right:64px;
+  padding-left:24px;
+  line-height: 28px;
+  color:#616161;
+}
+
+.docs-toc a {
+    font-weight: 400;
+    color: #424242
+}
+
+.docs-toc li {
+    font-size: 16px;
+    list-style: none
+}
+
+.hdr {
+    font-weight: 400;
+    color: black;
+    margin-bottom: 1em;
+}
+
+.move-right-24{
+  margin-left: 24px;
+}
+
+.grid-spacer {
+  margin-top:-36px;
+  margin-bottom:-12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

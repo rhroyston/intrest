@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=utf-8 />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile viewing enhancement -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <!-- Description should be roughly 155 characters, no double quotes, use keywords -->
+    <meta name="description" content="Browser Based RESTful API Device Management">
+    <!-- Format as Primary Keyword - Secondary Keyword | Brand Name, keep under 55 characters -->
+    <title>IntREST - Browser Based RESTful API Device Management</title>
+    <!-- Minimize the number of CSS files for performance -->
+    <link rel="shortcut icon" href="/intrest/favicon.png">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,100,300,700italic,500,500italic,400italic,300italic,100italic|Roboto+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="//code.getmdl.io/1.2.1/material.cyan-light_blue.min.css">
+    <link href="/intrest/style.css" rel="stylesheet" type="text/css" />
+</head>
+	
+<body>
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	    <!-- Header -->
+	    <header class="mdl-layout__header mdl-layout__header--transparent ">
+	        <div class="mdl-layout__header-row mdl-color-text--grey-700">
+	            <span class="mdl-layout-title">
+	                <a href="/intrest/"><img src="/intrest/images/intrest-long.png" alt="logo" height="28"></a>
+	            </span>
+	            <!-- Add spacer, to align navigation to the right -->
+	            <div class="mdl-layout-spacer"></div>
+	            <!-- Navigation -->
+	            <nav class="mdl-navigation">
+	                <a class="mdl-navigation__link" href="/intrest/">
+	                    <i class="material-icons">home</i> Home
+	                </a>
+	            </nav>
+	        </div>
+	    </header>
+	        
+	    <!-- Side Drawer -->
+	    <div class="mdl-layout__drawer">
+	        <span class="mdl-layout-title"><img src="/intrest/images/intrest-long.png" alt="logo" width="80%"></span>
+	        <div class="drawer-separator"></div>
+	        <nav class="mdl-navigation">
+	            <a class="mdl-navigation__link" href="/intrest/public"><i class="material-icons">lock_open</i> Public</a>
+	            <a class="mdl-navigation__link" href="/intrest/help"><i class="material-icons">help_outline</i> Help</a>
+	        </nav>
+	    </div>
+		
+		<!--Main Page -->
+		<main class="mdl-layout__content">
+			
+			<div class="mdl-grid">
+				<div class="mdl-layout-spacer"></div>
+				<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--10-col-desktop mdl-color-text--grey-900">
+					<h3 class="light">Browser Based Management via REST API's</h3>
+				</div>
+				<div class="mdl-layout-spacer"></div>
+			</div>			
+			
+			<div class="mdl-grid grid-spacer">
+				<div class="mdl-layout-spacer"></div>
+				<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--10-col-desktop mdl-color-text--grey-900">
+					
+					<section class="docs-toc docs-text-styling">
+						<nav class="section-content">
+							<ul>
+								<li><a href="#intrest">What is intREST?</a></li>
+								<li><a href="#how">How does it work?</a></li>
+								<li><a href="#rest">What is REST?</a></li>
+								<li><a href="#cors">What is CORS?</a></li>
+								<li><a href="#supported-endpoints">What endpoints are supported?</a></li>
+								<li><a href="#security">Is intREST secure?</a></li>
+								<li><a href="#security">Troubleshooting</a></li>
+							</ul>
+						</nav>
+					</section>					
+					
+				</div>
+				<div class="mdl-layout-spacer"></div>
+			</div>
+			
+			<div class="mdl-grid grid-spacer">
+				<div class="mdl-layout-spacer"></div>
+				<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--10-col-desktop mdl-color-text--grey-900">
+					<h4 class="light mdl-color-text--grey-900" id="intrest">What is intREST?</h4>
+					<p>
+						IntREST is intended to enable your Web browser to act as a standalone real time management platform for devices having a REST API.  The code is completely client side; there is no backend server. IntREST utilizes <a href="https://getmdl.io/">Material Design Lite</a> and <a href="https://developers.google.com/chart/">Google Charts</a> as the presentation foundation and relies on your browsers support of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">XMLHttpRequest</a> API for the HTTP transport.</p>
+				</div>
+				<div class="mdl-layout-spacer"></div>
+			</div>
+			
+			<div class="mdl-grid grid-spacer">
+				<div class="mdl-layout-spacer"></div>
+				<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--10-col-desktop mdl-color-text--grey-900">
+					<h4 class="light mdl-color-text--grey-900" id="how">How does it work?</h4>
+					<p>
+						Client side only.  Your data and credentials are isolated to your browser and managed devices.  JavaScript in your browser initiates communications to managed devices which respond with data which is then displayed by your browser.  Your browsers view configuration is stored in <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">local storage</a>.  For backup purposes you can download your intREST view configuration file and store it wherever you would like.  There is no server required or used by intREST.  The data fetched from managed devices is not stored.
+					</p>
+				</div>
+				<div class="mdl-layout-spacer"></div>
+			</div>
+			
+			<div class="mdl-grid grid-spacer">
+				<div class="mdl-layout-spacer"></div>
+				<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--10-col-desktop mdl-color-text--grey-900">
+					<h4 class="light mdl-color-text--grey-900" id="rest">What is REST?</h4>
+					<p>Representational state, REST, is a communications architecture or style; the World Wide Web is an example of RESTful architecture.</p>
+					<p class="quote">Representational state transfer &#40;REST&#41; or RESTful Web services are one way of providing interoperability between computer systems on the Internet. REST-compliant Web services allow requesting systems to access and manipulate textual representations of Web resources using a uniform and predefined set of stateless operations. Other forms of Web service exist, which expose their own arbitrary sets of operations such as WSDL and SOAP. &#45;<a href="//en.wikipedia.org/wiki/Representational_state_transfer">Wikipedia</a></p>
+					<p>A subset of HTTP verbs and their behavior are primarily what one needs to know to utilize a RESTful API.  DELETE, GET, POST, and PUT are methods that pass arguments to the REST API.  The difference between POST and PUT is that POST creates while PUT updates or replaces.</p>
+				</div>
+				<div class="mdl-layout-spacer"></div>
+			</div>
+			
+			<div class="mdl-grid grid-spacer">
+				<div class="mdl-layout-spacer"></div>
+				<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--10-col-desktop mdl-color-text--grey-900">
+					<h4 class="light mdl-color-text--grey-900" id="cors">What is CORS?</h4>
+					<p>Cross Origin Resource Sharing allows scripts, namely JavaScript, access to content hosted on a domain other than itself.  <span class="bold">By default, Web resources disallow this functionality</span> but Web servers can specify exceptions via a response header.  Absent this exception header, scripts are disallowed from communicating with foreign Web resources; unless you install a plugin on your browser to bypass this basic security feature.  <span class="bold">CORS plugins are available for Chrome and Firefox and are required if you are using a REST API on a device that fails to set the Access-Control-Allow-Origin header</span>.  See the Troubleshooting section below.
+					<p class="quote">
+						A resource makes a cross-origin HTTP request when it requests a resource from a different domain than the one which the first resource itself serves. For example, an HTML page served from http://domain-a.com makes an &#60;img&#62; src request for http://domain-b.com/image.jpg. Many pages on the web today load resources like CSS stylesheets, images and scripts from separate domains.
+						<br>
+						<br>
+						<span class="bold">For security reasons, browsers restrict cross-origin HTTP requests initiated from within scripts.</span> For example, XMLHttpRequest and Fetch follow the same-origin policy. -<a href="//developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">MDN</a>
+					</p>
+				
+				</div>
+				<div class="mdl-layout-spacer"></div>
+			</div>
+			
+			<div class="mdl-grid grid-spacer">
+				<div class="mdl-layout-spacer"></div>
+				<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--10-col-desktop mdl-color-text--grey-900">
+					<h4 class="light mdl-color-text--grey-900" id="supported-endpoints">What endpoints are supported?</h4>
+					<p>Endpoints with a REST API can be managed with intREST.</p>
+				</div>
+				<div class="mdl-layout-spacer"></div>
+			</div>
+			
+			<div class="mdl-grid grid-spacer">
+				<div class="mdl-layout-spacer"></div>
+				<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--10-col-desktop mdl-color-text--grey-900">
+					<h4 class="light mdl-color-text--grey-900" id="security">Is intREST secure?</h4>
+					<p>HTTPS, or HTTP secure, is the transport method utilized. This method of communication is widely used and trusted for transactions such as online banking. Your data is isolated to your system; specifically data is in your browser and managed endpoint while at rest and protected by TLS while in transit.</p>
+				</div>
+				<div class="mdl-layout-spacer"></div>
+			</div>
+			
+			<div class="mdl-grid grid-spacer">
+				<div class="mdl-layout-spacer"></div>
+				<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--10-col-desktop mdl-color-text--grey-900">
+					<h4 class="light mdl-color-text--grey-900" id="security">Troubleshooting</h4>
+					<p>CORS issues cover 90% of problems.  First use <a href="//curl.haxx.se/">cURL</a> to verify that your REST API is up and responding. Windows users can run cURL by downloading and installing <a href="//www.cygwin.com">Cygwin</a>. Once validated with cURL, look at your browser console for errors.  Managed devices must return the CORS header or you will have to install a CORS plugin on your browser. For Firefox users, <a href="//addons.mozilla.org/en-US/firefox/addon/cors-everywhere/">CORS Everywhere</a> works great.  For Chrome users, <a href="//chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en">Access Control Allow Origin &#42;</a> works.</p>
+				</div>
+				<div class="mdl-layout-spacer"></div>
+			</div>
+			
+			<br>
+			<br>
+			<br>
+			<br>
+		</main>
+		
+        <!--Main Page Footer Section -->
+		<footer class="mdl-mega-footer">
+			<div class="mdl-mega-footer__middle-section">
+				
+				<div class="mdl-mega-footer__drop-down-section">
+					<input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+					<h1 class="mdl-mega-footer__heading">Features</h1>
+					<ul class="mdl-mega-footer__link-list">
+						<li><a href="#">About</a></li>
+						<li><a href="#">Terms</a></li>
+						<li><a href="#">Partners</a></li>
+						<li><a href="#">Updates</a></li>
+					</ul>
+				</div>
+				
+				<div class="mdl-mega-footer__drop-down-section">
+					<input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+					<h1 class="mdl-mega-footer__heading">Details</h1>
+					<ul class="mdl-mega-footer__link-list">
+						<li><a href="#">Specs</a></li>
+						<li><a href="#">Tools</a></li>
+						<li><a href="#">Resources</a></li>
+					</ul>
+				</div>
+				
+				<div class="mdl-mega-footer__drop-down-section">
+					<input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+					<h1 class="mdl-mega-footer__heading">Technology</h1>
+					<ul class="mdl-mega-footer__link-list">
+						<li><a href="#">How it works</a></li>
+						<li><a href="#">Patterns</a></li>
+						<li><a href="#">Usage</a></li>
+						<li><a href="#">Products</a></li>
+						<li><a href="#">Contracts</a></li>
+					</ul>
+				</div>
+				
+				<div class="mdl-mega-footer__drop-down-section">
+					<input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+					<h1 class="mdl-mega-footer__heading">FAQ</h1>
+					<ul class="mdl-mega-footer__link-list">
+						<li><a href="#">Questions</a></li>
+						<li><a href="#">Answers</a></li>
+						<li><a href="#">Contact us</a></li>
+					</ul>
+				</div>
+				
+			</div>
+			
+			<div class="mdl-mega-footer__bottom-section">
+				<div class="mdl-logo">Title</div>
+				<ul class="mdl-mega-footer__link-list">
+					<li><a href="#">Help</a></li>
+					<li><a href="#">Privacy & Terms</a></li>
+				</ul>
+			</div>
+		</footer>
+        
+    </div>
+        
+    <!--Toast Messages Markup -->
+    <div id="toast" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+    </div>
+    
+	<script src="//code.getmdl.io/1.2.1/material.min.js"></script>
+	<script src="/intrest/script.js"></script>
+</body>
+</html>
