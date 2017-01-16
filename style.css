@@ -15,62 +15,59 @@ label {
   font-size: 1.2em;
 }
 
-#intro{
+
+.polling-slider{
+  width: 100%;
+  margin-top:12px;
   
 }
 
-#device{
-  
+.polling-div{
+  display: block !important;
 }
 
-.drawer-separator {
-  height: 1px;
-  background-color: #dcdcdc;
-  margin: 8px 0;
+.polling-legend{
+  font-size:.8em;
 }
 
-.social-icon {
-  position: absolute;
-  height: 36px;
-  left: 1px;
-  opacity: .3;
+.mdl-js-slider{
+  color:red;
 }
 
-.bold{
-  font-weight: 500;
+.mdl-card{
+  display:none;
 }
 
-.oauth-login-button {
-  width: 148px;
-  margin: 12px;
+.mdl-card__title{
+  display:block !important;
 }
 
-.license {
-  font-size: .6em;
-}
-.opacity4 {
-  opacity: .4;
+.configuration-card {
+  width: 512px;
 }
 
-.text-center {
-  text-align: center;
-}
-
-.oin {
-  color: #424242;
-  font-size: .8em;
-  vertical-align: 15%;
-}
-
-.text-left{
-  text-align:left;
-}
-.mdl-card {
+#into-card, #unsupported-card {
   width: 512px;
 }
 
 .mdl-card__supporting-text{
   color:#757575;
+  width:auto;
+}
+
+#guage-div{
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
 }
 
 .mdl-card__menu {
@@ -107,13 +104,82 @@ label {
   background: url('/intrest/images/md-grey.jpg') center / cover;
 }
 
-.login-card > .mdl-card__title {
-  background: url('/firebase-auth/images/sun.png') center / cover;
+.endpoint-card > .mdl-card__title {
+  height: 64px;
+  background: white;
 }
 
 #help-card > .mdl-card__title {
   background: url('/firebase-auth/images/help.jpg') center / cover;
 }
+
+.my-table{
+  margin: auto;
+}
+
+.panel {
+  max-height: 0;
+  transition: 0.2s ease-in-out;
+  opacity: 0;
+}
+
+.panel.show {
+  opacity: 1;
+  max-height: 500px;  
+}
+
+.drawer-separator {
+  height: 1px;
+  background-color: #dcdcdc;
+  margin: 8px 0;
+}
+
+.social-icon {
+  position: absolute;
+  height: 36px;
+  left: 1px;
+  opacity: .3;
+}
+
+.bold{
+  font-weight: 500;
+}
+
+.oauth-login-button {
+  width: 148px;
+  margin: 12px;
+}
+
+.license {
+  font-size: .6em;
+}
+.opacity4 {
+  opacity: .4;
+}
+
+.text-center {
+  text-align: center;
+}
+.center-div{
+  width:256px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.oin {
+  color: #424242;
+  font-size: .8em;
+  vertical-align: 15%;
+}
+
+.text-left{
+  text-align:left;
+}
+
+
+
+
+
 
 .top-title {
   position:absolute;
@@ -203,14 +269,109 @@ label {
   margin-bottom:-12px;
 }
 
+.mdl-select-workaround{
+    border-style:solid;
+    border-color:#e0e0e0;
+    border-width: 0 0 1px 0;
+    color:#bdbdbd;
+    font-family: 'Roboto', sans-serif;
+    font-size:1.2em;
+    font-weight:400;
+    outline: 0;
+    margin-top:1.4em;
+    margin-left:20px;
+    width:160px;
+    text-transform:capitalize;
+}
+.active{
+    color: #424242;
+}
+
+select > .placeholder {
+  display: none;
+}
+
+.nav-header{
+  font-size:1.25em;
+}
+
+.valign-nav-text{
+  vertical-align: -14%
+}
+
+.text-right{
+  text-align:right;
+}
 
 
 
 
+dialog {
+  position: absolute;
+  left: 0; right: 0;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: -webkit-fit-content;
+  height: fit-content;
+  margin: auto;
+  padding: 1em;
+  background: white;
+  color: black;
+  display: none;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 1px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
 
+dialog[open] {
+  display: block;
+}
 
+dialog::backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
 
+dialog + .backdrop {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
 
+/* for small devices, modal dialogs go full-screen */
+@media screen and (max-width: 540px) {
+  dialog[_polyfill_modal] {  /* TODO: implement */
+    top: 0;
+    width: auto;
+    margin: 1em;
+  }
+}
 
+._dialog_overlay {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+}
 
+dialog.fixed {
+  position: fixed;
+  top: 50%;
+  transform: translate(0, -50%);
+}
 
+.float-right{
+  float: right;
+}
+.nav-delete-button{
+  margin-top:-4px;
+}
+
+.delete-icon{
+  
+  font-size:.7em;
+}

@@ -12,9 +12,9 @@
     <title>IntREST - Browser Based RESTful API Device Management</title>
     <!-- Minimize the number of CSS files for performance -->
     <link rel="shortcut icon" href="/intrest/favicon.png">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,100,300,700italic,500,500italic,400italic,300italic,100italic|Roboto+Condensed:300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="//code.getmdl.io/1.2.1/material.cyan-light_blue.min.css">
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,700,100,300,700italic,500,500italic,400italic,300italic,100italic|Roboto+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="//code.getmdl.io/1.3.0/material.light_blue-green.min.css" />
     <link href="/intrest/style.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -40,11 +40,34 @@
             
         <!-- Side Drawer -->
         <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title"><img src="/intrest/images/intrest-long.png" alt="logo" width="80%"></span>
-            <div class="drawer-separator"></div>
+            <span class="mdl-layout-title mdl-color--grey-900"><img src="/intrest/images/intrest-long.png" alt="logo" width="80%"></span>
+            
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="/intrest/public"><i class="material-icons">lock_open</i> Public</a>
-                <a class="mdl-navigation__link" href="/intrest/help"><i class="material-icons">help_outline</i> Help</a>
+                <!-- credentials area -->
+                <span class="mdl-navigation__link nav-header mdl-color-text--grey-700 accordion" href="" id="nav-menu-credentials">
+                    <span class="valign-nav-text">Credentials</span>
+                    <div class="float-right">
+                        <button class="mdl-button mdl-js-button mdl-button--icon mdl-color-text--blue-A700" id="nav-menu-add-credential-button">
+                            <i class="material-icons">add</i>
+                        </button>
+                    </div>
+                </span>
+                <div id="nav-menu-credentials-panel" class="panel">
+                    <!-- dynamically add credentials here -->
+                </div>
+                
+                <div class="drawer-separator"></div>
+                
+                <!-- devices area -->
+                <span class="mdl-navigation__link  nav-header mdl-color-text--grey-700 accordion" href="" id="nav-menu-devices">
+                    <span class="valign-nav-text">Devices</span>
+                    <button class="mdl-button mdl-js-button mdl-button--icon mdl-color-text--blue-A700" id="nav-menu-add-device-button">
+                        <i class="material-icons">add</i>
+                    </button> 
+                </span>
+                <div id="nav-menu-devices-panel" class="panel">
+                    <!-- dynamically add devices here -->
+                </div>
             </nav>
         </div>
             
@@ -57,10 +80,45 @@
                 <!-- Center Card -->
                 <div class="mdl-layout-spacer"></div>
                 
-                <div class="mdl-card mdl-shadow--2dp mdl-cell" id="intro">
-                    
+                
+                
+                
+                <div class="mdl-card mdl-shadow--2dp mdl-cell endpoint-card" id="card1">
                     <div class="mdl-card__title">
-                        <h1 class="mdl-card__title-text mdl-color-text--white">Real Time Device Management</h1>
+                        <h5 class="mdl-card__title-text mdl-color-text--grey-900">Hostname1</h5>
+                        <h6 class="mdl-card__subtitle-text mdl-color-text--grey-700">Cisco 2921XM</h6>
+                    </div>
+                    <div class="mdl-card__supporting-text mdl-typography--headline text-center">
+                        <div id="guage-div"></div>
+                        <div id="chart-div"></div>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border polling-div">
+                        <!-- Slider with Starting Value -->
+                        <div class="polling-slider">
+                            <input class="mdl-slider mdl-js-slider mdl-color-text--grey-900" type="range" min="0" max="100" value="25" tabindex="0">
+                        </div>
+                        <div class="polling-legend text-center mdl-color-text--grey-500">
+                            <span class="polling-minutes-span"></span> Minute Polling
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                <div class="mdl-card mdl-shadow--2dp mdl-cell" id="unsupported-card">
+                    <div class="mdl-card__title">
+                        <h1 class="mdl-card__title-text mdl-color-text--white">Unsupported Browser</h1>
+                    </div>
+                    <div class="mdl-card__supporting-text mdl-typography--headline text-center">
+                        <p>Your broswer does not support HTML5 local storage and does not support this Web application.</p>
+                    </div>
+                </div>
+                
+                <div class="mdl-card mdl-shadow--2dp mdl-cell" id="intro-card">
+                    <div class="mdl-card__title">
+                        <h1 class="mdl-card__title-text mdl-color-text--white">Setup</h1>
                     </div>
                     <div class="mdl-card__supporting-text mdl-typography--headline">
                         <ul class="demo-list-three mdl-list">
@@ -87,45 +145,97 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="mdl-card__actions mdl-card--border intro-card-actions">
+                    <div class="mdl-card__actions mdl-card--border">
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color-text--yellow-A700" href="/intrest/help">
                             Help
                         </a>
                         <div class="mdl-layout-spacer"></div>
-                        <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="javascript:void(0)" id="add-device">
+                        <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="javascript:void(0)" id="show-credential-card">
+                            Add Credential
+                        </a>
+                        <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="javascript:void(0)" id="show-device-card">
                             Add Device
                         </a>
                     </div>
                 </div>
                 
-                <div class="mdl-card mdl-shadow--2dp mdl-cell" id="device">
-                    
+                <div class="mdl-card mdl-shadow--2dp mdl-cell configuration-card" id="credential-card">
                     <div class="mdl-card__title">
-                        <h1 class="mdl-card__title-text mdl-color-text--white">Add Device</h1>
+                        <h1 class="mdl-card__title-text mdl-color-text--white">Credential</h1>
                     </div>
-                    <div class="mdl-card__supporting-text mdl-typography--headline">
+                    <div class="mdl-card__supporting-text mdl-typography--headline text-center">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="address">
-                            <label class="mdl-textfield__label" for="address">Device Address...</label>
+                            <input class="mdl-textfield__input" type="text" id="credential-id">
+                            <label class="mdl-textfield__label" for="credential-id">Credential ID...</label>
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="username">
                             <label class="mdl-textfield__label" for="username">Username...</label>
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="password">
+                            <input class="mdl-textfield__input" type="password" id="password">
                             <label class="mdl-textfield__label" for="password">Password...</label>
                         </div>
                     </div>
-                    <div class="mdl-card__actions mdl-card--border intro-card-actions">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color-text--yellow-A700" href="javascript:void(0)">
+                    <div class="mdl-card__actions mdl-card--border">
+                        <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color-text--yellow-A700" id="credential-cancel">
                             Cancel
-                        </a>
+                        </button>
                         <div class="mdl-layout-spacer"></div>
-                        <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="javascript:void(0)" id="add-device">
-                            Submit
-                        </a>
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="credential-save" disabled>
+                            Save
+                        </button>
                     </div>
+                </div>
+                
+                <div class="mdl-card mdl-shadow--2dp mdl-cell configuration-card" id="device-card">
+                    
+                    <div class="mdl-card__title">
+                        <h1 class="mdl-card__title-text mdl-color-text--white">Device</h1>
+                    </div>
+                    
+                    <div class="mdl-card__supporting-text mdl-typography--headline mdl-grid">
+                        
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
+                            <input class="mdl-textfield__input left-margin" type="text" id="device-id">
+                            <label class="mdl-textfield__label" for="device-id">Device ID...</label>
+                        </div>
+                        
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
+                            <input class="mdl-textfield__input" type="text" id="device-address">
+                            <label class="mdl-textfield__label" for="device-address">Device Address...</label>
+                        </div>
+                        
+                        <div class="mdl-cell mdl-cell--6-col mdl-cell--bottom">
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="credentials-checkbox">
+                                <input type="checkbox" id="credentials-checkbox" class="mdl-checkbox__input">
+                                <span class="mdl-checkbox__label" id="basic-auth-span">Basic Authentication</span>
+                            </label>
+                        </div>
+                        
+                        <div class="mdl-cell mdl-cell--6-col">
+                            <select id="credentials-select" class="mdl-select-workaround" disabled>
+                                <!-- <option class="placeholder" selected disabled value="">Select credential</option> -->
+                                <!-- <option value="apples">apples</option> -->
+                            </select>
+                        </div>
+                        
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <br>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="mdl-card__actions mdl-card--border">
+                        <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color-text--yellow-A700" id="cancel-device">
+                            Cancel
+                        </button>
+                        <div class="mdl-layout-spacer"></div>
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" href="javascript:void(0)" id="device-save" disabled>
+                            Save
+                        </button>
+                    </div>
+                    
                 </div>
                 
                 <!-- Center Card -->
@@ -145,7 +255,7 @@
                     More Information
                 </div>
                 <ul class="mdl-mini-footer__link-list">
-                    <li><a href="//rest.elkstein.org/">Learn REST&#58; A Tutorial</a></li>
+                    <li><a href="//docs.oracle.com/javaee/6/tutorial/doc/gijqy.html">What Are RESTful Web Services?</a></li>
                     <li><a href="//developers.google.com/chart/interactive/docs/">Using Google Charts</a></li>
                 </ul>
             </div>
@@ -158,6 +268,26 @@
         <div class="mdl-snackbar__text"></div>
         <button class="mdl-snackbar__action" type="button"></button>
     </div>
+    
+    <dialog>
+
+            <div class="">
+                <h2 class="mdl-card__title-text">Confirm</h2>
+            </div>
+            <div>
+                <span id="dialog-confirm-text"></span>?
+            </div>
+            <div>
+                <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color-text--yellow-A700" id="dialog-cancel">
+                    Cancel
+                </button>
+                
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="dialog-ok">
+                    OK
+                </button>
+            </div>
+
+    </dialog>
         
     <!-- IE Compatibility shims -->
       <!--[if lt IE 9]>
@@ -184,7 +314,10 @@
     
     </script>
     <script src="//code.getmdl.io/1.2.1/material.min.js"></script>
+    <script src="/intrest/dialog-polyfill.js"></script>
     <script src="/intrest/script.js"></script>
+    <script src="//rack.pub/clock.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </body>
 
 </html>
